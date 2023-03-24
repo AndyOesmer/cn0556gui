@@ -1,0 +1,77 @@
+import sys
+from PySide6.QtCore import Qt, QThread, Signal
+from PySide6.QtWidgets import (
+    QApplication,
+    QDialog,
+    QDialogButtonBox,
+    QFormLayout,
+    QLineEdit,
+    QVBoxLayout,
+    QMainWindow,
+    QWidget,
+    QHBoxLayout,
+    QGridLayout,
+    QPushButton,
+    QSlider,
+)
+from pglive.sources.data_connector import DataConnector
+from time import sleep
+from threading import Thread
+
+DISPLAY_HEIGHT = 600
+BUTTON_HEIGHT = 60
+BUTTON_WIDTH = 150
+
+BULB_HEIGHT = 292
+BULB_WIDTH = 150
+
+class CN0556_GUI(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self)
+        self.resize(500,500)
+
+        self.setWindowTitle("CN0556 GUI")
+        self.setWindowState(Qt.WindowMaximized)
+        self.generalLayout = QHBoxLayout()
+        
+        parentWidget = QWidget(self)
+        parentWidget.setLayout(self.generalLayout)
+        self.setCentralWidget(parentWidget)
+   
+        self.col1 = QVBoxLayout()
+        self.col2 = QVBoxLayout()
+        self.generalLayout.addLayout(self.col1)
+        self.generalLayout.addLayout(self.col2)
+
+        
+        self._createDisplay()
+        self.Write()
+  
+    def _createDisplay(self):
+        displayDisplay = QGridLayout()
+
+        self.top = QLineEdit()
+        self.top.setFixedHeight(DISPLAY_HEIGHT)
+        self.top.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.top.setReadOnly(True)
+        displayDisplay.addWidget(self.top, 1, 1)
+        self.top.setText(str("Hello"))
+        self.col1.addLayout(displayDisplay)
+
+        #self.Blueplot_widget.setFixedHeight(DISPLAY_HEIGHT)
+        #self.top.addItem(self.Blueplot_curve)
+        # DataConnector holding 600 points and plots @ 100Hz
+        #self.Bluedata_connector = DataConnector(self.top, max_points=600, update_rate=100)
+        #top.seot_widget, 1, 1)
+
+    def Write(self):
+        self.top.setText(str("Hello"))
+
+def main():
+    app = QApplication([])
+    gui = CN0556_GUI()
+    gui.show()
+    sys.exit(app.exec())
+
+if __name__ == "__main__":
+    main()
