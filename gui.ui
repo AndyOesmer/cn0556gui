@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>615</width>
-    <height>981</height>
+    <width>1164</width>
+    <height>804</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -168,45 +168,11 @@
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout">
-             <item row="0" column="0">
-              <widget class="QLabel" name="Top1_V1Label">
-               <property name="text">
-                <string>V1</string>
-               </property>
-              </widget>
-             </item>
              <item row="0" column="1">
               <widget class="QDoubleSpinBox" name="Top1_V1Spin"/>
              </item>
-             <item row="1" column="0">
-              <widget class="QLabel" name="Top1_VUVLabel">
-               <property name="text">
-                <string>V1 UV</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="1">
-              <widget class="QDoubleSpinBox" name="Top1_VUVSpin"/>
-             </item>
-             <item row="2" column="0">
-              <widget class="QLabel" name="Top1_I1PLabel">
-               <property name="text">
-                <string>I1 In P</string>
-               </property>
-              </widget>
-             </item>
              <item row="2" column="1">
               <widget class="QDoubleSpinBox" name="Top1_I1PSpin"/>
-             </item>
-             <item row="3" column="0">
-              <widget class="QLabel" name="Top1_I1NLabel">
-               <property name="text">
-                <string>I1 In N</string>
-               </property>
-              </widget>
-             </item>
-             <item row="3" column="1">
-              <widget class="QDoubleSpinBox" name="Top1_I1NSpin"/>
              </item>
              <item row="4" column="0">
               <widget class="QLabel" name="Top1_PowerLabel">
@@ -215,8 +181,42 @@
                </property>
               </widget>
              </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="Top1_VUVLabel">
+               <property name="text">
+                <string>V1 UV</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="Top1_I1PLabel">
+               <property name="text">
+                <string>I1 In P</string>
+               </property>
+              </widget>
+             </item>
              <item row="4" column="1">
               <widget class="QDoubleSpinBox" name="Top1_P"/>
+             </item>
+             <item row="1" column="1">
+              <widget class="QDoubleSpinBox" name="Top1_VUVSpin"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="Top1_I1NLabel">
+               <property name="text">
+                <string>I1 In N</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="0">
+              <widget class="QLabel" name="Top1_V1Label">
+               <property name="text">
+                <string>V1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QDoubleSpinBox" name="Top1_I1NSpin"/>
              </item>
             </layout>
            </widget>
@@ -344,38 +344,60 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_5">
-       <item>
-        <widget class="QFrame" name="Bot1">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="Bot2">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="Bot3">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      <widget class="QFrame" name="Bot1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>541</width>
+         <height>404</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QFrame" name="Bot3">
+       <property name="geometry">
+        <rect>
+         <x>768</x>
+         <y>10</y>
+         <width>561</width>
+         <height>404</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame">
+       <property name="geometry">
+        <rect>
+         <x>560</x>
+         <y>20</y>
+         <width>120</width>
+         <height>80</height>
+        </rect>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>10000</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
      </widget>
     </item>
    </layout>
@@ -385,7 +407,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>615</width>
+     <width>1164</width>
      <height>22</height>
     </rect>
    </property>

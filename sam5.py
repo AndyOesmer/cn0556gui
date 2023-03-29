@@ -1,7 +1,7 @@
 from CN0556_GUI_Design5 import Ui_MainWindow
 import sys
-from PySide6.QtCore import Qt, QThread, Signal
-from PySide6.QtWidgets import (
+from PyQt5.QtCore import Qt, QThread
+from PyQt5.QtWidgets import (
     QApplication,
     QDialog,
     QDialogButtonBox,
@@ -15,7 +15,7 @@ from PySide6.QtWidgets import (
     QPushButton,
     QSlider,
 )
-
+from PyQt5 import uic
 from time import sleep
 from threading import Thread
 
@@ -50,6 +50,7 @@ class CN0556:
 class UI(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
+        uic.loadUi("CN0556_GUI_Design5.ui", self)
         self.setupUi(self)
         self.changeValue()
 
